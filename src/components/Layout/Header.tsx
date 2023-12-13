@@ -37,28 +37,28 @@ export default function Header() {
       <div className="flex flex-col ml-8 ">
         <div className="flex flex-row items-center text-sm text-zinc-700">
           <Image
-            src="/home.svg"
-            alt="home icon"
+            src="/icons/home.svg"
+            alt="inicio"
             width="20"
             height="20"
             className="mb-2 mr-2"
           />
           <Image
-            src="/chevronright.svg"
-            alt="chevron right"
+            src="/icons/chevronright.svg"
+            alt=""
             width="16"
             height="16"
             className="mb-1 mr-2"
           />
           <span className="mr-2">Inicio</span>
           <Image
-            src="/chevronright.svg"
-            alt="chevron right"
+            src="/icons/chevronright.svg"
+            alt=""
             width="16"
             height="16"
             className="mb-1 mr-2"
           />
-          <span className="font-medium">Perfil</span>
+          <span className="font-medium text-cyan-600">Perfil</span>
         </div>
         <span className="text-[13px] text-zinc-700">
           {dayInPt[day] +
@@ -74,16 +74,16 @@ export default function Header() {
       <div className="mr-10 flex flex-row items-center">
         <span className="mr-6">
           <Image
-            src="/settings.svg"
-            alt="settings icon"
+            src="/icons/settings.svg"
+            alt="configurações"
             width={20}
             height={20}
           />
         </span>
         <span className="mr-6">
           <Image
-            src="/notification.svg"
-            alt="notificaton icon"
+            src="/icons/notification.svg"
+            alt="notificações"
             width={20}
             height={20}
           />
@@ -96,7 +96,7 @@ export default function Header() {
           </span>
         </div>
         <Image
-          src="/chevrondown.svg"
+          src="/icons/chevrondown.svg"
           alt="chevron downwards"
           width={20}
           height={20}
