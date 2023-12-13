@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Avatar, AvatarImage } from "../ui/avatar";
 
-export default function Aside() {
+export default function Menu() {
   return (
     <aside className="w-16 h-screen border-r-[1px] flex flex-col items-center">
       <Avatar className="mt-8 mb-8 border-[1px] border-cyan-400 border-opacity-10">
