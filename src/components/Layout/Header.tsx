@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header className="h-[90px] w-screen border-b-[1px] flex items-center justify-between">
-      <div className="flex flex-col ml-8 ">
+      <div className="flex flex-col ml-24">
         <div className="flex flex-row items-center text-sm text-zinc-700">
           <Image
             src="/icons/home.svg"
