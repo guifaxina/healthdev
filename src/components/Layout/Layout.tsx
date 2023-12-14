@@ -1,12 +1,13 @@
 import Menu from "./Menu";
 import Header from "./Header";
-
+import Tabs from "./Tabs";
 
 export default function Layout() {
   return (
-    <main className="flex flex-row h-screen">
+    <div className="flex flex-col">
       <Menu />
       <Header />
-    </main>
-  )
+      <Tabs/>
+    </div>
+  );
 }
