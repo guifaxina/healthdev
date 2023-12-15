@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Notification from "../../../public/icons/notification";
+import Settings from "../../../public/icons/settings";
 
 export default function Header() {
   const date = new Date();
@@ -72,21 +74,11 @@ export default function Header() {
       </div>
 
       <div className="mr-10 flex flex-row items-center">
-        <span className="mr-6">
-          <Image
-            src="/icons/settings.svg"
-            alt="configurações"
-            width={20}
-            height={20}
-          />
+        <span className="group mr-3 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
+          <Settings fill="#909090" className="group-hover:fill-cyan-500 duration-200"/>
         </span>
-        <span className="mr-6">
-          <Image
-            src="/icons/notification.svg"
-            alt="notificações"
-            width={20}
-            height={20}
-          />
+        <span className="group mr-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
+          <Notification fill="#909090" className="group-hover:fill-cyan-500 duration-200"/>
         </span>
         <span className="border-l-[1px] h-6 mr-3"></span>
         <div className="flex flex-col mr-4">
