@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { useState } from "react";
 import Arrow from "../../../public/icons/arrow";
+import { motion } from "framer-motion";
 
 export default function Tabs() {
-  let tabs = [
+  const [activeTab, setActiveTab] = useState("");
+
+  const tabs = [
     { id: "generalData", value: "Dados gerais" },
     { id: "address", value: "Endereço" },
     { id: "password", value: "Senha" },
@@ -27,9 +31,14 @@ export default function Tabs() {
               <li key={id}>
                 <Link href={"/dados-gerais"}>
                   <button
-                    className="hover:text-cyan-600 duration-200 focus:text-cyan-600 focus:border-b-2 
-                  pb-6 px-3 focus:border-cyan-600 focus:font-medium"
+                    className="relative hover:text-cyan-600 duration-200 focus:text-cyan-600 
+                  pb-6 px-3 focus:font-medium"
+                    onClick={() => setActiveTab(id)}
                   >
+                    {activeTab === id && (
+                      <motion.div layoutId="blue-border" className="absolute inset-0 border-b-2 border-cyan-500" transition={{ duration: 0.15 }}/>
+                    )}
+
                     {value}
                   </button>
                 </Link>
