@@ -20,23 +20,23 @@ export default function Menu() {
 
       <hr className="w-6 mb-6" />
       <nav className="flex flex-col items-center">
-        <ul className="flex flex-col items-center gap-3">
-          <li>
-            <Image src="/icons/home.svg" alt="inicio" width={20} height={20} />
+        <ul className="flex flex-col items-center gap-[2px]">
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
+            <Image src="/icons/home.svg" alt="inicio" width={20} height={20}/>
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image src="/icons/idcard.svg" alt="usuário" width={20} height={20} />
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image src="/icons/building.svg" alt="clinicas" width={20} height={20} />
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image src="/icons/monitor.svg" alt="painel atendimento" width={18} height={18} />
           </li>
         </ul>
         <hr className="mt-6 mb-10 w-6" />
-        <ul className="flex flex-col gap-3 items-center">
-          <li>
+        <ul className="flex flex-col gap-[2px] items-center">
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image
               src="/icons/notification.svg"
               alt="notificações"
@@ -44,13 +44,13 @@ export default function Menu() {
               height={20}
             />
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image src="/icons/helpcircle.svg" alt="central de ajuda" width={20} height={20} />
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image src="/icons/settings.svg" alt="configurações" width={20} height={20} />
           </li>
-          <li>
+          <li className="w-8 h-8 hover:bg-[#eeeeee] duration-200 flex items-center justify-center">
             <Image
               src="/icons/arrowbackwards.svg"
               alt="sair"
@@ -59,7 +59,7 @@ export default function Menu() {
             />
           </li>
         </ul>
-        <div className="border-[1px] rounded border-cyan-500 w-8 h-8 flex justify-center items-center mt-48">
+        <div className="border-[1px] rounded border-cyan-500 w-8 h-8 flex justify-center items-center mt-40">
           <Image src="/icons/chat.svg" alt="chat" width={16} height={14} />
         </div>
       </nav>
