@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Arrow from "../../../public/icons/arrow";
 import { motion } from "framer-motion";
+import DadosGerais from "../Tabs/DadosGerais";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("");
@@ -25,28 +26,46 @@ export default function Tabs() {
       </div>
 
       <nav className="border-b-[1px]">
-        <ul className="flex flex-row gap-9 mt-10 text-[#707070]">
+        <ul className="flex flex-row gap-5 mt-10 text-[#707070]">
           {tabs.map(({ id, value }) => {
             return (
               <li key={id}>
-                <Link href={"/dados-gerais"}>
-                  <button
-                    className="relative hover:text-cyan-600 duration-200 focus:text-cyan-600 
+                <div>
+                  {activeTab === id ? (
+                    <>
+                      <button
+                        className="relative text-cyan-600 
+                    pb-6 px-3 font-medium"
+                        onClick={() => setActiveTab(id)}
+                      >
+                        {activeTab === id && (
+                          <motion.div
+                            layoutId="blue-border"
+                            className="absolute inset-0 border-b-2 border-cyan-500"
+                            transition={{ duration: 0.15 }}
+                          />
+                        )}
+                        {value}
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      className="relative hover:text-cyan-600 duration-200 focus:text-cyan-600 
                   pb-6 px-3 focus:font-medium"
-                    onClick={() => setActiveTab(id)}
-                  >
-                    {activeTab === id && (
-                      <motion.div layoutId="blue-border" className="absolute inset-0 border-b-2 border-cyan-500" transition={{ duration: 0.15 }}/>
-                    )}
-
-                    {value}
-                  </button>
-                </Link>
+                      onClick={() => setActiveTab(id)}
+                    >
+                      {value}
+                    </button>
+                  )}
+                </div>
               </li>
             );
           })}
         </ul>
       </nav>
+      <main className="mt-[50px]">
+        <DadosGerais />
+      </main>
     </div>
   );
 }
