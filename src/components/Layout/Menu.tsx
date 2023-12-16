@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Avatar, AvatarImage } from "../ui/avatar";
 
 export default function Menu() {
-  let menuUpHalf = [
+  let menuUpperHalf = [
     { src: "home", alt: "inicio" },
     { src: "idcard", alt: "usuário" },
     { src: "building", alt: "clinicas" },
@@ -35,7 +35,7 @@ export default function Menu() {
       <hr className="w-6 mb-6" />
       <nav className="flex flex-col items-center">
         <ul className="flex flex-col items-center gap-[2px]">
-          {menuUpHalf.map(({ src, alt }) => {
+          {menuUpperHalf.map(({ src, alt }) => {
             return (
               <li
                 key={src}
