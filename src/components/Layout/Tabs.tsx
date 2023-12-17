@@ -3,15 +3,21 @@ import { useState } from "react";
 import Arrow from "../../../public/icons/arrow";
 import { motion } from "framer-motion";
 import DadosGerais from "../Tabs/DadosGerais";
+import Endereco from "../Tabs/Endereco";
 
 export default function Tabs() {
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState<number>(0);
+
+  const displayTab = [
+    <DadosGerais key={0}/>,
+    <Endereco key={1}/> 
+  ]
 
   const tabs = [
-    { id: "generalData", value: "Dados gerais" },
-    { id: "address", value: "Endereço" },
-    { id: "password", value: "Senha" },
-    { id: "professionalData", value: "Dados profissionais" },
+    { id: 0, value: "Dados gerais" },
+    { id: 1, value: "Endereço" },
+    { id: 2, value: "Senha" },
+    { id: 3, value: "Dados profissionais" },
   ];
 
   return (
@@ -35,7 +41,7 @@ export default function Tabs() {
                     <>
                       <button
                         className="relative text-cyan-600 
-                    pb-6 px-3 font-medium"
+                        pb-6 px-3 font-medium"
                         onClick={() => setActiveTab(id)}
                       >
                         {activeTab === id && (
@@ -64,7 +70,7 @@ export default function Tabs() {
         </ul>
       </nav>
       <main className="mt-[50px]">
-        <DadosGerais />
+        {displayTab[activeTab]}
       </main>
     </div>
   );
