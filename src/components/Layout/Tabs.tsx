@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import Arrow from "../../../public/icons/arrow";
+import Arrow from "../../../public/icons/svgcomponents/arrow";
 import { motion } from "framer-motion";
 import GeneralData from "../Tabs/GeneralData";
 import Address from "../Tabs/Address";

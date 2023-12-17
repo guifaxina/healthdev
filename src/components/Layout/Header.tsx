@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Notification from "../../../public/icons/notification";
-import Settings from "../../../public/icons/settings";
+import Notification from "../../../public/icons/svgcomponents/notification";
+import Settings from "../../../public/icons/svgcomponents/settings";
 import {
   Tooltip,
   TooltipTrigger,
