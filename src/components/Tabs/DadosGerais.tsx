@@ -7,9 +7,9 @@ import { ChangeEvent, useState } from "react";
 
 export default function DadosGerais() {
   const [file, setFile] = useState<File>();
-  
+
   const [preUploadImage, setPreUploadImage] = useState<string>();
-  
+
   const [editButton, setEditButton] = useState(false);
 
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
@@ -57,13 +57,33 @@ export default function DadosGerais() {
             Atualize sua foto e dados pessoais aqui.
           </h2>
         </div>
-        <button
-          className="bg-cyan-500 mt-3 px-8 h-10 rounded-sm text-white text-sm 
-          font-medium bottom-0 right-0 hover:bg-cyan-600 duration-200"
-          onClick={() => setEditButton(true)} // FAZER BOTAO DE EDITAR APARECER OUTROS 2 BOTOES
-        >
-          Editar
-        </button>
+        {editButton ? (
+          <span className="flex gap-2">
+            <button
+              className="bg-white border-[1px] mt-3 px-5 h-10 rounded-sm text-[#505050] text-sm 
+              font-medium bottom-0 right-0 hover:bg-zinc-100 duration-200"
+              onClick={() => setEditButton(false)}
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              className="bg-cyan-500 mt-3 px-8 h-10 rounded-sm text-white text-sm 
+              font-medium bottom-0 right-0 hover:bg-cyan-600 duration-200"
+              onClick={() => setEditButton(false)}
+            >
+              Salvar
+            </button>
+          </span>
+        ) : (
+          <button
+            className="bg-cyan-500 mt-3 px-8 h-10 rounded-sm text-white text-sm 
+            font-medium bottom-0 right-0 hover:bg-cyan-600 duration-200"
+            onClick={() => setEditButton(true)}
+          >
+            Editar
+          </button>
+        )}
       </div>
 
       <form onSubmit={handleSubmit(saveChanges)}>
