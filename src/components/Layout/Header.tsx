@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Notification from "../../../public/icons/notification";
 import Settings from "../../../public/icons/settings";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "../ui/tooltip";
 
 export default function Header() {
   const date = new Date();
@@ -74,12 +80,41 @@ export default function Header() {
       </div>
 
       <div className="mr-10 flex flex-row items-center">
-        <span className="group mr-3 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
-          <Settings fill="#909090" className="group-hover:fill-cyan-500 duration-200"/>
-        </span>
-        <span className="group mr-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
-          <Notification fill="#909090" className="group-hover:fill-cyan-500 duration-200"/>
-        </span>
+        <TooltipProvider delayDuration={200}>
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="group mr-3 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
+                <Settings
+                  fill="#909090"
+                  className="group-hover:fill-cyan-500 duration-200"
+                />
+              </span>
+            </TooltipTrigger>
+            <TooltipContent
+              side="bottom"
+              className=" bg-zinc-700 text-zinc-200 mr-2"
+            >
+              <span>Configurações</span>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="group mr-5 w-8 h-8 rounded-full flex items-center justify-center hover:bg-cyan-600/5">
+                <Notification
+                  fill="#909090"
+                  className="group-hover:fill-cyan-500 duration-200"
+                />
+              </span>
+            </TooltipTrigger>
+            <TooltipContent
+              side="bottom"
+              className=" bg-zinc-700 text-zinc-200 mr-4"
+            >
+              <span>Notificações</span>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <span className="border-l-[1px] h-6 mr-3"></span>
         <div className="flex flex-col mr-4">
           <span className="text-md text-black">Clinica Odontolife</span>
