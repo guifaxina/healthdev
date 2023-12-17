@@ -2,15 +2,15 @@ import Link from "next/link";
 import { useState } from "react";
 import Arrow from "../../../public/icons/arrow";
 import { motion } from "framer-motion";
-import DadosGerais from "../Tabs/DadosGerais";
-import Endereco from "../Tabs/Endereco";
+import GeneralData from "../Tabs/GeneralData";
+import Address from "../Tabs/Address";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const displayTab = [
-    <DadosGerais key={0}/>,
-    <Endereco key={1}/> 
+    <GeneralData key={0}/>,
+    <Address key={1}/> 
   ]
 
   const tabs = [
