@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import Image from "next/image";
 import InputMask from "react-input-mask";
 import { ChangeEvent, useState } from "react";
+import PersonalInfo from "../Layout/PersonalInfo";
 
 export default function DadosGerais() {
   const [file, setFile] = useState<File>();
@@ -49,14 +50,7 @@ export default function DadosGerais() {
   return (
     <>
       <div className="flex flex-row justify-between border-b-[1px] pb-8">
-        <div>
-          <h1 className="text-lg font-medium text-[#505050] mb-2">
-            Informações pessoais
-          </h1>
-          <h2 className="text-sm text-[#909090]">
-            Atualize sua foto e dados pessoais aqui.
-          </h2>
-        </div>
+        <PersonalInfo subtitle="Atualize sua foto e dados pessoais aqui."/>
         {editButton ? (
           <span className="flex gap-2">
             <button
