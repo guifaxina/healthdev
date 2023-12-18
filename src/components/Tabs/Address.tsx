@@ -7,13 +7,13 @@ export default function Address() {
 
   const { register, handleSubmit, reset } = useForm<TAddressForm>();
 
-  type Tl10nInputs = {
+  type TAddressInputs = {
     value: string;
     placeholder: string;
     name: "address" | "number" | "neighbourhood";
   }[];
 
-  const l10nInputs: Tl10nInputs = [
+  const locationInputs: TAddressInputs = [
     { value: "text", placeholder: "Logradouro", name: "address" },
     { value: "number", placeholder: "Número", name: "number" },
     { value: "text", placeholder: "Bairro", name: "neighbourhood" },
@@ -109,7 +109,7 @@ export default function Address() {
           </span>
           <div className="w-2/4 flex absolute left-2/4 -translate-x-1/2">
             <span className="w-full relative flex items-center gap-8">
-              {l10nInputs.map((input) => {
+              {locationInputs.map((input) => {
                 return (
                   <input
                     {...register(input.name)}
