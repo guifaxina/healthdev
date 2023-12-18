@@ -3,17 +3,32 @@ import PersonalInfo from "../Layout/PersonalInfo";
 import { useForm } from "react-hook-form";
 
 export default function Address() {
-  const [ editButton, setEditButton ] = useState<boolean>(false);
+  const [editButton, setEditButton] = useState<boolean>(false);
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<TAddressForm>();
 
-  const l10nInputs = [
+  type Tl10nInputs = {
+    value: string;
+    placeholder: string;
+    name: "address" | "number" | "neighbourhood";
+  }[];
+
+  const l10nInputs: Tl10nInputs = [
     { value: "text", placeholder: "Logradouro", name: "address" },
     { value: "number", placeholder: "Número", name: "number" },
     { value: "text", placeholder: "Bairro", name: "neighbourhood" },
   ];
 
-  function saveChanges(e: any) {
+  type TAddressForm = {
+    uf: string;
+    city: string;
+    address: string;
+    number: number;
+    neighbourhood: string;
+    complement: string;
+  };
+
+  function saveChanges(e: TAddressForm) {
     console.log(e);
     setEditButton(false);
   }
@@ -32,8 +47,8 @@ export default function Address() {
                 className="bg-white border-[1px] mt-3 px-5 h-10 rounded-sm text-[#505050] text-sm
                 font-medium bottom-0 right-0 hover:bg-zinc-100 duration-200"
                 onClick={() => {
-                  setEditButton(false)
-                  reset()
+                  setEditButton(false);
+                  reset();
                 }}
               >
                 Cancelar
@@ -66,7 +81,6 @@ export default function Address() {
               disabled={!editButton}
               className="w-2/4 border-[1px] border-zinc-300 h-10 py-[8px] p-4 focus:outline-cyan-100
               text-[13px] text-[#505050] bg-white"
-              
             >
               <option value="" disabled selected className="text-[#505050]">
                 Selecionar
@@ -88,7 +102,7 @@ export default function Address() {
             </select>
           </div>
         </div>
-        
+
         <div className="mt-8 flex flex-row border-b-[1px] pb-14">
           <span className="text-sm text-[#707070]">
             Logradouro / Número / Bairro
@@ -115,6 +129,7 @@ export default function Address() {
           <span className="text-sm text-[#707070]">Complemento</span>
           <div className="w-2/4 absolute left-2/4 -translate-x-1/2">
             <input
+              {...register("complement")}
               disabled={!editButton}
               type="text"
               placeholder="Complemento"
