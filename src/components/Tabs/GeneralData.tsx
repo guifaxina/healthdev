@@ -29,7 +29,7 @@ export default function GeneralData() {
     { value: "cns" },
   ];
 
-  type TDadosGeraisForm = {
+  type TGeneralDataForm = {
     name: string;
     birthdate: string;
     sex: "masculino" | "feminino";
@@ -40,9 +40,9 @@ export default function GeneralData() {
     cns: string;
   };
 
-  const { register, handleSubmit, reset } = useForm<TDadosGeraisForm>();
+  const { register, handleSubmit, reset } = useForm<TGeneralDataForm>();
 
-  function saveChanges(e: TDadosGeraisForm) {
+  function saveChanges(e: TGeneralDataForm) {
     console.log(e);
     setEditButton(false)
   }
