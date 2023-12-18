@@ -192,7 +192,7 @@ export default function Menu() {
             );
           })}
         </ul>
-        <div className="border-[1px] rounded border-cyan-500 w-8 h-8 flex justify-center items-center mt-40">
+        <div className={`border-[1px] rounded border-cyan-500 w-8 h-8 flex justify-center items-center ${expanded ? "mt-24" : "mt-40"}`}>
           <Image src="/icons/chat.svg" alt="chat" width={16} height={14} />
         </div>
       </nav>
