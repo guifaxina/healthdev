@@ -56,15 +56,31 @@ export default function Menu() {
         }`}
       ></div>
       <button onClick={() => handleExpandedChange()}>
-        <Image
-          src={
-            expanded ? "/icons/flippedexpand.svg" : "/icons/expandprofile.svg"
-          }
-          alt="expandir perfil"
-          width={50}
-          height={50}
-          className={`absolute top-[90px] ${expanded ? "-right-6" : "left-9"}`}
-        />
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Image
+                src={
+                  expanded
+                    ? "/icons/flippedexpand.svg"
+                    : "/icons/expandprofile.svg"
+                }
+                alt="expandir perfil"
+                width={50}
+                height={50}
+                className={`absolute top-[90px] ${
+                  expanded ? "-right-6" : "left-9"
+                }`}
+              />
+            </TooltipTrigger>
+            <TooltipContent
+              side="right"
+              className={`bg-zinc-700 text-zinc-200 ${expanded ? "ml-[265px] mb-3" : "ml-10 mb-2"}`}
+            >
+              <span>{expanded ? "Recuar" : "Expandir"}</span>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </button>
 
       {expanded ? (
@@ -74,8 +90,16 @@ export default function Menu() {
       ) : (
         <hr className={`w-6 mb-6`} />
       )}
-      <nav className={`flex flex-col w-full ${expanded ? "items-start" : "items-center"}`}>{/* W-FULL */}
-        <ul className={`flex flex-col gap-[3px] ${expanded ? "w-full items-start" : "items-center"}`}>
+      <nav
+        className={`flex flex-col w-full ${
+          expanded ? "items-start" : "items-center"
+        }`}
+      >
+        <ul
+          className={`flex flex-col gap-[3px] ${
+            expanded ? "w-full items-start" : "items-center"
+          }`}
+        >
           {menuUpperHalf.map(({ src, alt }) => {
             return (
               <TooltipProvider delayDuration={200} key={src}>
@@ -141,18 +165,18 @@ export default function Menu() {
                         expanded ? "w-full" : "justify-center w-8"
                       }`}
                     >
-                        <Image
-                          src={"/icons/" + src + ".svg"}
-                          alt={alt}
-                          width={20}
-                          height={20}
-                          className={`${expanded && "ml-[6px]"}`}
-                        />
-                        {expanded && (
-                          <span className="text-sm flex flex-row whitespace-nowrap ml-4 mt-[3px] text-[#909090]">
-                            {alt}
-                          </span>
-                        )}
+                      <Image
+                        src={"/icons/" + src + ".svg"}
+                        alt={alt}
+                        width={20}
+                        height={20}
+                        className={`${expanded && "ml-[6px]"}`}
+                      />
+                      {expanded && (
+                        <span className="text-sm flex flex-row whitespace-nowrap ml-4 mt-[3px] text-[#909090]">
+                          {alt}
+                        </span>
+                      )}
                     </li>
                   </TooltipTrigger>
                   <TooltipContent
