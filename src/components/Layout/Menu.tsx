@@ -56,7 +56,7 @@ export default function Menu() {
         }`}
       ></div>
       <button onClick={() => handleExpandedChange()}>
-        <TooltipProvider>
+        <TooltipProvider delayDuration={200}>
           <Tooltip>
             <TooltipTrigger>
               <Image
