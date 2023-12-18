@@ -4,13 +4,17 @@ import Arrow from "../../../public/icons/svgcomponents/arrow";
 import { motion } from "framer-motion";
 import GeneralData from "../Tabs/GeneralData";
 import Address from "../Tabs/Address";
+import Password from "../Tabs/Password";
+import ProfessionalData from "../Tabs/ProfessionalData";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const displayTab = [
     <GeneralData key={0}/>,
-    <Address key={1}/> 
+    <Address key={1}/>,
+    <Password key={2}/>,
+    <ProfessionalData key={3}/>
   ]
 
   const tabs = [
