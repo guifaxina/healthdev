@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Hdev Client
 
-## Getting Started
+Esse projeto é um client que provê uma interface para uma aplicação no nicho de saúde. Server da aplicação: [Hdev Server](https://github.com/guifaxina/healthdev)
 
-First, run the development server:
+## Guia de instalação.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+As seguintes instruções vão gerar uma cópia do projeto pronto para rodar em sua máquina localmente.
+O projeto requer o Node versão >= v18.17.0
+
+1. Clone o projeto:
+```sh
+$ git clone "https://github.com/guifaxina/healthdev.git" <pasta(opcional)>
 ```
+2. Entre na pasta que você especificou:
+```sh
+$ cd <pasta>
+```
+3. Instale as dependências e rode a aplicação:
+```sh
+$ npm i && npm run build && npm run start
+```
+O servidor agora irá estar rodando em <strong>http://localhost:3000</strong>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variáveis
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Caso enfrente problemas com as requisições você provavelmente deverá alterar o arquivo src/variables.ts para o endereço que está rodando o server, por exemplo "http://localhost:8080"
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Upload
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Foi implementado upload da foto de perfil do usuário.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Feito com
+* TypeScript
+* Next
+  * React
+* TailwindCSS
+* ShadcnUI (Radix)
+  * Framer motion
+* React-hook-form
+* Axios
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Author
+* [Guilherme Faxina](https://www.linkedin.com/in/guifaxina/)
