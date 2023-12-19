@@ -4,6 +4,8 @@ import Image from "next/image";
 import InputMask from "react-input-mask";
 import { ChangeEvent, useState } from "react";
 import PersonalInfo from "../Layout/PersonalInfo";
+import axios from "axios";
+import { SERVER_URL } from "@/variables";
 
 export default function GeneralData() {
   const [file, setFile] = useState<File>();
@@ -42,8 +44,29 @@ export default function GeneralData() {
 
   const { register, handleSubmit, reset } = useForm<TGeneralDataForm>();
 
-  function saveChanges(e: TGeneralDataForm) {
-    console.log(e);
+  async function uploadProfilePic() {
+    const { data: { signedUrl } } = await axios.get(SERVER_URL + "get-upload-profilepic-url")
+
+    const { url } = await fetch(signedUrl, {
+      method: "PUT",
+      headers: {
+        "Content-type": "image/jpeg"
+      },
+      body: file
+    })
+
+    const imageUrl = url.split("?")[0]
+
+    return imageUrl
+  }
+
+  async function saveChanges(e: TGeneralDataForm) {
+    const imageUrl = await uploadProfilePic()
+
+    await axios.post(SERVER_URL + "create-user", {
+      user: { profilePic: imageUrl }
+    })
+    
     setEditButton(false)
   }
 
