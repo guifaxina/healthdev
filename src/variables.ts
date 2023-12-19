@@ -1,1 +1,1 @@
-export const SERVER_URL="https://hdev-server-production.up.railway.app/"
+export const SERVER_URL="https://hdev-server-production.up.railway.app/api/v1/"
