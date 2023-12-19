@@ -2,6 +2,10 @@
 
 Esse projeto é um client que provê uma interface para uma aplicação no nicho de saúde. Server da aplicação: [Hdev Server](https://github.com/guifaxina/healthdev)
 
+### Acesse o projeto em produção:
+
+"https://healthdev-guifaxinas-projects.vercel.app/"
+
 ## Guia de instalação.
 
 As seguintes instruções vão gerar uma cópia do projeto pronto para rodar em sua máquina localmente.
@@ -27,7 +31,7 @@ Caso enfrente problemas com as requisições você provavelmente deverá alterar
 
 #### Upload
 
-Foi implementado upload da foto de perfil do usuário.
+Foi implementado upload da foto de perfil do usuário. O client faz uma requisição para o servidor solicitando uma URL de postagem, utilizando essa URL o client pode então fazer novamente uma requisição, diretamente para o bucket do S3. Poupando recursos e computação do servidor.
 
 ### Feito com
 * TypeScript
